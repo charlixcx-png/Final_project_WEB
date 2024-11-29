@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/quiz.css">
+    <title>Consumption Habits Quiz</title>
+</head>
+<body>
+    <div class="container">
+        <h1>How sustainable are your consumption habits?</h1>
+        <form id="quizForm">
+            <% const questions = [ 
+                { 
+                    text: "1. How often do you buy second-hand or pre-owned items?", 
+                    name: "q1",
+                    options: [
+                        "A. Always", "B. Often", "C. Sometimes", 
+                        "D. Rarely", "E. Never", "F. I’ve never thought about it"
+                    ]
+                },
+                { 
+                    text: "2. When shopping for groceries, do you check for local or organic options?", 
+                    name: "q2",
+                    options: [
+                        "A. Always", "B. Often", "C. Sometimes", 
+                        "D. Rarely", "E. Never", "F. I don’t pay attention to labels"
+                    ]
+                },
+                { 
+                    text: "3. Do you avoid products with excessive packaging?", 
+                    name: "q3",
+                    options: [
+                        "A. Always", "B. Often", "C. Sometimes", 
+                        "D. Rarely", "E. Never", "F. Packaging doesn’t concern me"
+                    ]
+                },
+                { 
+                    text: "4. Do you research brands to ensure they are ethical?", 
+                    name: "q4",
+                    options: [
+                        "A. Always", "B. Often", "C. Sometimes", 
+                        "D. Rarely", "E. Never", "F. I don’t have time to research"
+                    ]
+                },
+                { 
+                    text: "5. How often do you choose public transport, bike, or walk instead of driving?", 
+                    name: "q5",
+                    options: [
+                        "A. Always", "B. Often", "C. Sometimes", 
+                        "D. Rarely", "E. Never", "F. I don’t have other options"
+                    ]
+                },
+                { 
+                    text: "6. When buying clothes, do you prioritize quality over quantity?", 
+                    name: "q6",
+                    options: [
+                        "A. Always", "B. Often", "C. Sometimes", 
+                        "D. Rarely", "E. Never", "F. I just buy what I like"
+                    ]
+                },
+                { 
+                    text: "7. Do you bring your own reusable bags, bottles, or containers when shopping or eating out?", 
+                    name: "q7",
+                    options: [
+                        "A. Always", "B. Often", "C. Sometimes", 
+                        "D. Rarely", "E. Never", "F. I forget most of the time"
+                    ]
+                },
+                { 
+                    text: "8. Do you actively reduce your energy consumption at home?", 
+                    name: "q8",
+                    options: [
+                        "A. Always", "B. Often", "C. Sometimes", 
+                        "D. Rarely", "E. Never", "F. I don’t think about it"
+                    ]
+                },
+                { 
+                    text: "9. How often do you donate or recycle items you no longer need?", 
+                    name: "q9",
+                    options: [
+                        "A. Always", "B. Often", "C. Sometimes", 
+                        "D. Rarely", "E. Never", "F. I just throw things away"
+                    ]
+                },
+                { 
+                    text: "10. Do you educate yourself or others about responsible consumption practices?", 
+                    name: "q10",
+                    options: [
+                        "A. Always", "B. Often", "C. Sometimes", 
+                        "D. Rarely", "E. Never", "F. I don’t think it’s necessary"
+                    ]
+                }
+            ]; %>
+
+            <% questions.forEach((question, index) => { %>
+                <div class="question">
+                    <p><%= question.text %></p>
+                    <% question.options.forEach((option, i) => { %>
+                        <label>
+                            <input type="radio" name="<%= question.name %>" value="<%= option.charAt(0) %>"> 
+                            <%= option %>
+                        </label>
+                    <% }) %>
+                </div>
+            <% }); %>
+
+            <button type="button" onclick="calculateResult()">Submit</button>
+        </form>
+        <div id="result" class="result"></div>
+        <button type="button">
+            <a href="/index" class="btn-home">Back to Main Page</a>
+        </button>
+    </div>
+    <script src="/js/quiz.js"></script>
+</body>
+</html>

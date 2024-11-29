@@ -1,0 +1,129 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #e0f7fa, #a5d6a7);
+    background-attachment: fixed;
+    background-size: cover;
+    overflow-y: auto;
+    color: #333;
+}
+
+.project-title {
+    text-align: center;
+    margin-bottom: 50px; /* Separación adecuada del formulario */
+    font-size: 2.5rem; /* Tamaño grande */
+    font-family: 'Merriweather', serif;
+    color: #2e7d32;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra para efecto moderno */
+    letter-spacing: 1px; /* Espaciado entre letras */
+    line-height: 1.2; /* Altura de línea */
+    background: linear-gradient(to right, #66bb6a, #388e3c); /* Gradiente en el texto */
+    -webkit-background-clip: text; /* Clip del gradiente */
+    color: transparent; /* Fondo del texto transparente para el gradiente */
+    padding: 10px;
+}
+
+form {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1.2s ease-in-out;
+    position: relative;
+    margin-top: 50px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+form h1 {
+    text-align: center;
+    font-family: 'Merriweather', serif;
+    color: #2e7d32;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+    color: #2e7d32;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #b2dfdb;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #f9f9f9;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #4caf50;
+    background: #e8f5e9;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #388e3c;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #4caf50;
+    transform: scale(1.05);
+}
+
+#alert {
+    padding: 15px;
+    border: 1px solid #e57373;
+    background-color: #ffcdd2;
+    color: #b71c1c;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+p a {
+    color: #388e3c;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+p a:hover {
+    color: #66bb6a;
+}
